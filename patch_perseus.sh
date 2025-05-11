@@ -38,7 +38,7 @@ if [ ! -f "com.bilibili.AzurLane.apk" ]; then
 fi
 
 # Download Perseus
-if [ ! -d "Perseus" ]; then
+if [ ! -d "azurlane" ]; then
     echo "download JMBQ"
     git clone https://github.com/feathers-l/azurlane
 fi
