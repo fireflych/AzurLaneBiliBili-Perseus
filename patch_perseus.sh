@@ -54,7 +54,7 @@ oncreate=$(grep -n -m 1 'onCreate' com.bilibili.AzurLane/smali_classes3/com/unit
 sed -ir "N; s#\($oncreate\n    .locals 2\)#\1\n    const-string v0, \"JMBQ\"\n\n    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V\n#" com.bilibili.AzurLane/smali_classes3/com/unity3d/player/UnityPlayerActivity.smali
 
 echo "Build Patched Azur Lane apk"
-java -jar apktool.jar -q -f b com.bilibili.AzurLane -o build/com.bilibili.AzurLane.patched.apk
+java -jar apktool.jar b com.bilibili.AzurLane -o build/com.bilibili.AzurLane.patched.apk
 
 echo "Set Github Release version"
 s=($(./apkeep -a com.bilibili.AzurLane -l))
